@@ -6,7 +6,7 @@ from database import Base, engine
 from routes import router
 from fastapi.openapi.utils import get_openapi
 
-app = FastAPI(title="Auth Microservice")
+app = FastAPI(title="Orders Microservice")
 
 Base.metadata.create_all(bind=engine)
 app.include_router(router)
@@ -28,9 +28,9 @@ def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
-        title="Auth Microservice",
+        title="Orders Microservice",
         version="0.1.0",
-        description="API para la autenticación de usuarios en DIDI Food",
+        description="API para la gestion de ordenes",
         routes=app.routes,
     )
     openapi_schema["components"]["securitySchemes"] = {
