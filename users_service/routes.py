@@ -7,7 +7,7 @@ from models import User, UserRead, UserUpdate
 
 router = APIRouter()
 
-AUTH_URL = "http://127.0.0.1:8000/me"
+AUTH_URL = "https://fastapi-render-f2yz.onrender.com/me"
 
 async def admin_required(authorization: str = Header(None)):
     if not authorization:
@@ -17,7 +17,7 @@ async def admin_required(authorization: str = Header(None)):
             response = await client.get(
                 AUTH_URL,
                 headers={"Authorization": authorization},
-                timeout=5.0
+                timeout=30.0
             )
         except httpx.RequestError:
             raise HTTPException(status_code=503, detail="No se pudo conectar con el servicio de autenticación")

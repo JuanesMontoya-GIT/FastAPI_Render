@@ -7,7 +7,7 @@ import httpx
 
 router = APIRouter()
 
-AUTH_URL = "http://127.0.0.1:8000/me"
+AUTH_URL = "https://fastapi-render-f2yz.onrender.com/me"
 PRODUCTS_URL = "http://127.0.0.1:8002/products"
 
 

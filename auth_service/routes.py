@@ -7,7 +7,7 @@ from utils import hash_password, verify_password, create_access_token, verify_to
 import httpx
 router = APIRouter()
 
-USERS_URL = "http://127.0.0.1:8001/sync_user"
+USERS_URL = "https://fastapi-render-1-qqwg.onrender.com/sync_user"
 
 @router.post("/register")
 async def register_user(user: UserCreate, db: Session = Depends(get_db)):
