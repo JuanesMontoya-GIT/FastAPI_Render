@@ -8,7 +8,7 @@ import httpx
 router = APIRouter()
 
 AUTH_URL = "https://fastapi-render-f2yz.onrender.com/me"
-PRODUCTS_URL = "http://127.0.0.1:8002/products"
+PRODUCTS_URL = "https://fastapi-render-2-ldsm.onrender.com/products"
 
 
 async def get_current_user(authorization: str = Header(None)):
