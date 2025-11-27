@@ -46,6 +46,3 @@ def custom_openapi():
 
 app.openapi = custom_openapi
 
-@app.get("/ping")
-def ping():
-    return {"status": "ok"}
